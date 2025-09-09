@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: inherit; /* 继承 body 的背景颜色 */
+  color: inherit; /* 继承 body 的字体颜色 */
+  font-family: inherit; /* 继承 body 的字体 */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* 确保 App 占据整个视口高度 */
+  height: 100vh;
+}
+
+.chat-window {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.input-container {
+  width: 100%;
+  height: 100px; /* 固定高度 */
+  bottom: 0;
+ 
+  padding: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.input-field {
+  padding: 20px;
+  flex: 1;
+  margin-right: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none; /* 禁止调整大小 */
+}
+
+.button-container {
+  position: absolute; /* 相对于 .input-container 定位 */
+  bottom: 10px; /* 距离底部 10px */
+  right: 10px; /* 距离右侧 10px */
+  display: flex;
+  gap: 5px; /* 按钮之间的间距 */
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.code-block {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #007acc;
   color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.copy-button:hover {
+  background-color: #005a9e;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.copy-feedback {
+  position: absolute;
+  top: 10px;
+  right: 70px;
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 0;
+  padding: 0;
 }
+
+.send-button,
+.abort-button {
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.send-button {
+  background-color: #555e68;
+  color: white;
+  border: none;
+}
+
+.abort-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.send-button:disabled,
+.abort-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
